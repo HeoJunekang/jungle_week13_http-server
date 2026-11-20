@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>C HTTP Lab</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header><span class="tag">C · POSIX · HTTP/1.1</span><h1>작은 서버,<br>두 개의 연결.</h1>
+      <p>이 페이지는 C 웹 서버가 파일로 전송합니다.<br>아래 요청은 같은 서버를 거쳐 두 백엔드로 전달됩니다.</p></header>
+    <section aria-labelledby="echo-heading">
+      <div class="label">BACKEND A <code>POST /api/echo</code></div>
+      <h2 id="echo-heading">보낸 그대로 돌아오는 Echo</h2>
+      <form id="echo-form">
+        <label for="message">전송할 텍스트</label>
+        <textarea id="message" name="message" rows="3">안녕</textarea>
+        <button type="submit" id="echo-button">Echo 보내기 <span aria-hidden="true">↗</span></button>
+      </form>
+      <output id="echo-result" aria-live="polite">응답을 기다리고 있습니다.</output>
+    </section>
+    <section aria-labelledby="time-heading">
+      <div class="label">BACKEND B <code>GET /api/time</code></div>
+      <h2 id="time-heading">지금, UTC</h2>
+      <p>백엔드가 요청을 처리한 시각을 ISO 8601 형식으로 확인합니다.</p>
+      <button type="button" id="time-button">시각 가져오기 <span aria-hidden="true">↗</span></button>
+      <output id="time-result" aria-live="polite">아직 요청하지 않았습니다.</output>
+    </section>
+    <footer>브라우저 → 웹 서버 :8080 → Echo :8001 / Time :8002<br>연결 하나, 요청 하나. 응답 후 연결을 닫습니다.</footer>
+  </main>
+</body>
+</html>

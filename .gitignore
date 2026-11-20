@@ -1,0 +1,7 @@
+/webserver
+/echo_backend
+/time_backend
+/tests/unit
+__pycache__/
+*.dSYM/
+/.superpowers/
